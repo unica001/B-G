@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SFUIText-Medium.ttf">
+            <string>SFUIText-Medium</string>
+        </array>
+        <array key="SFUIText-Regular.ttf">
+            <string>SFUIText-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="VC3Cell" id="KGk-i7-Jjw" customClass="VC3Cell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="79.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ns7-1T-p4a">
+                        <rect key="frame" x="0.0" y="0.0" width="200" height="80"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="6h7-Ye-0cX">
+                                <rect key="frame" x="10" y="5" width="190" height="23.5"/>
+                                <fontDescription key="fontDescription" name="SFUIText-Regular" family="SF UI Text" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="SzW-ou-ubf">
+                                <rect key="frame" x="10" y="28.5" width="190" height="23"/>
+                                <fontDescription key="fontDescription" name="SFUIText-Regular" family="SF UI Text" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="60 AUD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="pmo-JS-M4J">
+                                <rect key="frame" x="10" y="51.5" width="190" height="23.5"/>
+                                <fontDescription key="fontDescription" name="SFUIText-Medium" family="SF UI Text" pointSize="14"/>
+                                <color key="textColor" red="0.4941176471" green="0.72941176470000002" blue="0.1215686275" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="SzW-ou-ubf" firstAttribute="width" secondItem="6h7-Ye-0cX" secondAttribute="width" id="0Gd-ty-FNG"/>
+                            <constraint firstItem="pmo-JS-M4J" firstAttribute="leading" secondItem="Ns7-1T-p4a" secondAttribute="leading" constant="10" id="0LX-fX-Ky1"/>
+                            <constraint firstItem="pmo-JS-M4J" firstAttribute="top" secondItem="SzW-ou-ubf" secondAttribute="bottom" id="BGa-FP-yMm"/>
+                            <constraint firstItem="SzW-ou-ubf" firstAttribute="height" secondItem="6h7-Ye-0cX" secondAttribute="height" id="R5c-iE-cM4"/>
+                            <constraint firstItem="6h7-Ye-0cX" firstAttribute="leading" secondItem="Ns7-1T-p4a" secondAttribute="leading" constant="10" id="TPO-9Q-lwu"/>
+                            <constraint firstItem="pmo-JS-M4J" firstAttribute="width" secondItem="6h7-Ye-0cX" secondAttribute="width" id="YYN-wt-975"/>
+                            <constraint firstItem="6h7-Ye-0cX" firstAttribute="top" secondItem="Ns7-1T-p4a" secondAttribute="top" constant="5" id="abg-Qc-FbF"/>
+                            <constraint firstItem="SzW-ou-ubf" firstAttribute="leading" secondItem="Ns7-1T-p4a" secondAttribute="leading" constant="10" id="fMI-NT-PYb"/>
+                            <constraint firstItem="pmo-JS-M4J" firstAttribute="height" secondItem="6h7-Ye-0cX" secondAttribute="height" id="nLT-21-51U"/>
+                            <constraint firstItem="SzW-ou-ubf" firstAttribute="top" secondItem="6h7-Ye-0cX" secondAttribute="bottom" id="rMG-BV-quL"/>
+                            <constraint firstAttribute="trailing" secondItem="pmo-JS-M4J" secondAttribute="trailing" id="sV1-4p-Uxf"/>
+                            <constraint firstAttribute="trailing" secondItem="SzW-ou-ubf" secondAttribute="trailing" id="wrL-Oh-hLU"/>
+                            <constraint firstAttribute="trailing" secondItem="6h7-Ye-0cX" secondAttribute="trailing" id="xdc-Fr-fhi"/>
+                            <constraint firstAttribute="bottom" secondItem="pmo-JS-M4J" secondAttribute="bottom" constant="5" id="zYF-p3-tlf"/>
+                        </constraints>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gfv-SD-yNl">
+                        <rect key="frame" x="200" y="0.0" width="120" height="80"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jg6-Bc-1BM">
+                                <rect key="frame" x="0.0" y="25.5" width="115" height="30"/>
+                                <color key="backgroundColor" red="0.4941176471" green="0.72941176470000002" blue="0.1215686275" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="115" id="bdm-sJ-koj"/>
+                                    <constraint firstAttribute="height" constant="30" id="wf4-7c-Es0"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SFUIText-Regular" family="SF UI Text" pointSize="12"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Jg6-Bc-1BM" secondAttribute="trailing" constant="5" id="4Oe-OD-6Wd"/>
+                            <constraint firstItem="Jg6-Bc-1BM" firstAttribute="centerY" secondItem="gfv-SD-yNl" secondAttribute="centerY" id="LcU-if-Jgj"/>
+                        </constraints>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iVZ-OP-0Xe">
+                        <rect key="frame" x="0.0" y="79" width="320" height="1"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="ziN-Gz-jGm"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                        <size key="shadowOffset" width="0.0" height="0.0"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="gfv-SD-yNl" secondAttribute="bottom" constant="-0.5" id="4kC-Dl-cjV"/>
+                    <constraint firstItem="gfv-SD-yNl" firstAttribute="width" secondItem="Ns7-1T-p4a" secondAttribute="width" constant="-80" id="BXM-Qo-agH"/>
+                    <constraint firstItem="gfv-SD-yNl" firstAttribute="leading" secondItem="Ns7-1T-p4a" secondAttribute="trailing" id="CQN-Io-cJ5"/>
+                    <constraint firstAttribute="trailing" secondItem="gfv-SD-yNl" secondAttribute="trailing" id="F2d-AR-MK1"/>
+                    <constraint firstItem="gfv-SD-yNl" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="L6l-bE-Ewa"/>
+                    <constraint firstAttribute="trailing" secondItem="iVZ-OP-0Xe" secondAttribute="trailing" id="M1x-3t-44k"/>
+                    <constraint firstItem="iVZ-OP-0Xe" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="M7A-dM-KPS"/>
+                    <constraint firstItem="gfv-SD-yNl" firstAttribute="height" secondItem="Ns7-1T-p4a" secondAttribute="height" id="av8-CL-09q"/>
+                    <constraint firstItem="Ns7-1T-p4a" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="fCf-xh-GF2"/>
+                    <constraint firstItem="Ns7-1T-p4a" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="fug-ff-1e2"/>
+                    <constraint firstAttribute="bottom" secondItem="Ns7-1T-p4a" secondAttribute="bottom" constant="-0.5" id="guJ-fe-cJ3"/>
+                    <constraint firstAttribute="bottom" secondItem="iVZ-OP-0Xe" secondAttribute="bottom" constant="-0.5" id="k5a-D6-fvq"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="btn_ReOrder" destination="Jg6-Bc-1BM" id="VP9-tq-caR"/>
+                <outlet property="lbl_Amount" destination="pmo-JS-M4J" id="j9j-vP-4yr"/>
+                <outlet property="lbl_Date" destination="6h7-Ye-0cX" id="uKs-Kd-l0X"/>
+                <outlet property="lbl_Time" destination="SzW-ou-ubf" id="vvL-Dc-olt"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+</document>

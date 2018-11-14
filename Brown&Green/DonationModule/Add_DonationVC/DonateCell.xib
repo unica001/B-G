@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SFUIText-Regular.ttf">
+            <string>SFUIText-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DonateCell" id="KGk-i7-Jjw" customClass="DonateCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="49.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V63-YA-ZrP">
+                        <rect key="frame" x="15" y="12" width="24" height="24"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="24" id="lzR-7c-Qcm"/>
+                            <constraint firstAttribute="height" constant="24" id="zab-Ap-d9L"/>
+                        </constraints>
+                        <state key="normal" backgroundImage="Checked"/>
+                        <state key="selected" backgroundImage="CheckedActive"/>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ypr-4F-pmx">
+                        <rect key="frame" x="50" y="15" width="250" height="20"/>
+                        <fontDescription key="fontDescription" name="SFUIText-Regular" family="SF UI Text" pointSize="14"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="Ypr-4F-pmx" secondAttribute="trailing" constant="20" id="C2d-Vh-Ec0"/>
+                    <constraint firstItem="Ypr-4F-pmx" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="UXY-n6-zYI"/>
+                    <constraint firstItem="V63-YA-ZrP" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="byd-h4-3nj"/>
+                    <constraint firstItem="V63-YA-ZrP" firstAttribute="centerY" secondItem="Ypr-4F-pmx" secondAttribute="centerY" constant="-1" id="gmf-Jv-65O"/>
+                    <constraint firstAttribute="bottom" secondItem="Ypr-4F-pmx" secondAttribute="bottom" constant="14.5" id="lvi-Ka-Gd1"/>
+                    <constraint firstItem="Ypr-4F-pmx" firstAttribute="leading" secondItem="V63-YA-ZrP" secondAttribute="trailing" constant="11" id="rOC-r0-xza"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="btn_Selection" destination="V63-YA-ZrP" id="8Af-DB-rae"/>
+                <outlet property="lbl_Time" destination="Ypr-4F-pmx" id="2cq-kC-Oip"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="Checked" width="22" height="22"/>
+        <image name="CheckedActive" width="22" height="22"/>
+    </resources>
+</document>

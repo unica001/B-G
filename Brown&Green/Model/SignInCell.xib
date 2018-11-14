@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SFUIText-Light.ttf">
+            <string>SFUIText-Light</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="signIn" rowHeight="70" id="KGk-i7-Jjw" customClass="SignInCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="49.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NDe-6q-uFx">
+                        <rect key="frame" x="50" y="49" width="255" height="1"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="tmB-Wf-8kb"/>
+                        </constraints>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="99z-5T-BKu">
+                        <rect key="frame" x="15" y="49" width="35" height="1"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="35" id="Wzv-AF-V5d"/>
+                            <constraint firstAttribute="height" constant="1" id="dZs-96-PVt"/>
+                        </constraints>
+                    </view>
+                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3uK-ji-wSN">
+                        <rect key="frame" x="55" y="10" width="245" height="30"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="30" id="0MN-PI-pcU"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="SFUIText-Light" family="SF UI Text" pointSize="14"/>
+                        <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="yes"/>
+                    </textField>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Le3-sq-jLy">
+                        <rect key="frame" x="20" y="12" width="26" height="26"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="26" id="NsI-ck-1V0"/>
+                            <constraint firstAttribute="width" constant="26" id="hmh-GC-tkn"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                <constraints>
+                    <constraint firstItem="NDe-6q-uFx" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="50" id="BTa-Ql-oIF"/>
+                    <constraint firstAttribute="trailing" secondItem="3uK-ji-wSN" secondAttribute="trailing" constant="20" id="M85-KO-Y1U"/>
+                    <constraint firstItem="Le3-sq-jLy" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="cnN-Z2-Mde"/>
+                    <constraint firstItem="3uK-ji-wSN" firstAttribute="leading" secondItem="Le3-sq-jLy" secondAttribute="trailing" constant="9" id="fMb-iH-Nip"/>
+                    <constraint firstItem="99z-5T-BKu" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="ffR-Eb-d1Z"/>
+                    <constraint firstAttribute="trailing" secondItem="NDe-6q-uFx" secondAttribute="trailing" constant="15" id="iCP-CO-1BE"/>
+                    <constraint firstAttribute="bottom" secondItem="99z-5T-BKu" secondAttribute="bottom" constant="-0.5" id="nmR-aO-9PV"/>
+                    <constraint firstItem="Le3-sq-jLy" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="oYj-fT-rBY"/>
+                    <constraint firstAttribute="bottom" secondItem="NDe-6q-uFx" secondAttribute="bottom" constant="-0.5" id="xKo-yc-uES"/>
+                    <constraint firstItem="3uK-ji-wSN" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="y2n-TU-RGx"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <connections>
+                <outlet property="_imageView" destination="Le3-sq-jLy" id="11r-PG-izz"/>
+                <outlet property="lineView" destination="NDe-6q-uFx" id="0Cr-c6-0gW"/>
+                <outlet property="textField" destination="3uK-ji-wSN" id="GX5-BH-Q9n"/>
+            </connections>
+            <point key="canvasLocation" x="34" y="58"/>
+        </tableViewCell>
+    </objects>
+</document>

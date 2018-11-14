@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="HelveticaNeue.ttc">
+            <string>HelveticaNeue</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="gTV-IL-0wX" customClass="HomeCollectionCell">
+            <rect key="frame" x="0.0" y="0.0" width="80" height="100"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="80" height="100"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="AeR-9h-eHk">
+                        <rect key="frame" x="15" y="5" width="50" height="50"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="rcccrcc" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IMQ-hG-Li7">
+                        <rect key="frame" x="5" y="62" width="70" height="36"/>
+                        <color key="backgroundColor" red="0.96078431369999995" green="0.37647058820000001" blue="0.15686274510000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="36" id="ROo-VL-H3m"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="AeR-9h-eHk" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="5" id="2iq-ZO-7li"/>
+                <constraint firstAttribute="bottom" secondItem="IMQ-hG-Li7" secondAttribute="bottom" constant="2" id="9RO-Yq-WyR"/>
+                <constraint firstItem="IMQ-hG-Li7" firstAttribute="top" secondItem="AeR-9h-eHk" secondAttribute="bottom" constant="7" id="CBT-Qd-5Zx"/>
+                <constraint firstAttribute="trailing" secondItem="AeR-9h-eHk" secondAttribute="trailing" constant="15" id="NE8-12-71k"/>
+                <constraint firstItem="AeR-9h-eHk" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="15" id="UO6-Be-E7I"/>
+                <constraint firstItem="IMQ-hG-Li7" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="YwT-0D-uSl"/>
+                <constraint firstAttribute="trailing" secondItem="IMQ-hG-Li7" secondAttribute="trailing" constant="5" id="nr4-HF-KFm"/>
+            </constraints>
+            <connections>
+                <outlet property="subCategoryImage" destination="AeR-9h-eHk" id="Tds-1k-LYY"/>
+                <outlet property="subCategoryLabel" destination="IMQ-hG-Li7" id="Ysg-HV-ydC"/>
+            </connections>
+        </collectionViewCell>
+    </objects>
+</document>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>616694839236-iq0tue5bstbj6p782fo3vj47bemakfjp.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.616694839236-iq0tue5bstbj6p782fo3vj47bemakfjp</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDgSZLtmOkhrJIKqC5hq_16ZAGYS2g4JNo</string>
+	<key>GCM_SENDER_ID</key>
+	<string>616694839236</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.uniagents.unica</string>
+	<key>PROJECT_ID</key>
+	<string>unica-160311</string>
+	<key>STORAGE_BUCKET</key>
+	<string>unica-160311.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<true/>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false/>
+	<key>IS_APPINVITE_ENABLED</key>
+	<false/>
+	<key>IS_GCM_ENABLED</key>
+	<true/>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true/>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:616694839236:ios:f9db8455514fb426</string>
+	<key>DATABASE_URL</key>
+	<string>https://unica-160311.firebaseio.com</string>
+</dict>
+</plist>

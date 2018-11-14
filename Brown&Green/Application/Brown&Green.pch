@@ -1,0 +1,38 @@
+//
+//  Brown&Green.pch
+//  Brown&Green
+//
+//  Created by vineet patidar on 25/04/17.
+//  Copyright © 2017 Ramniwas Patidar. All rights reserved.
+//
+
+#ifndef Brown_Green_pch
+#define Brown_Green_pch
+
+#import "Control.h"
+#import "Utility.h"
+#import "HCSStarRatingView.h"
+#import <UIKit/UIKit.h>
+#import "AppDelegate.h"
+#import "ConnectionManager.h"
+#import "UNKConstant.h"
+#import "MBProgressHUD.h"
+#import "SWRevealViewController.h"
+#import <SDWebImage/UIImageView+WebCache.h>
+#import "YSLContainerViewController.h"
+#import "IOFDB.h"
+#import "Config.h"
+#import "SBJSON.h"
+#import <Foundation/Foundation.h>
+#import "UIImageView+UIActivityIndicatorForSDWebImage.h"
+//#define NSLog
+
+#endif /* Brown_Green_pch */
+
+#define kErrorMsg @"It seems like we have encountered a temporary glitch. Please try again later."
+#define kErrorMsgJsonParse @"It seems like we have encountered a temporary glitch. Please try again later."
+#define kErrorMsgServerNotResponding @"It seems like we have encountered a temporary glitch. Please try again later."
+#define kErrorTitle @"Oops!!"
+#define kErrorMsgNoInternet @"It appears you are on slow connection or your internet is unavailable. Please check and try again !!"
+#define kErrorMsgSlowInternet @"It appears you are on slow connection or your internet is unavailable. Please check and try again !!"
+

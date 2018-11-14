@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="HelveticaNeue.ttc">
+            <string>HelveticaNeue</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="KGk-i7-Jjw" customClass="userSelectionCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="49.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eA7-e7-Cl4">
+                        <rect key="frame" x="10" y="10" width="270" height="30"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="30" id="xwc-2l-wDg"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Jdi-Ec-ngi">
+                        <rect key="frame" x="285" y="11" width="26" height="26"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="26" id="Z9w-Mo-eML"/>
+                            <constraint firstAttribute="height" constant="26" id="qUC-VJ-JlH"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="Jdi-Ec-ngi" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="11" id="VMw-xq-sye"/>
+                    <constraint firstAttribute="trailing" secondItem="Jdi-Ec-ngi" secondAttribute="trailing" constant="9" id="Xbb-R9-2NQ"/>
+                    <constraint firstItem="eA7-e7-Cl4" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="XfJ-Dv-i3e"/>
+                    <constraint firstItem="eA7-e7-Cl4" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="lBK-Bf-dJK"/>
+                    <constraint firstItem="Jdi-Ec-ngi" firstAttribute="leading" secondItem="eA7-e7-Cl4" secondAttribute="trailing" constant="5" id="rXM-HF-8PA"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="checkMarkImage" destination="Jdi-Ec-ngi" id="twR-B0-Scw"/>
+                <outlet property="nameLabel" destination="eA7-e7-Cl4" id="Dy4-KU-wEt"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+</document>
