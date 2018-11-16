@@ -99,9 +99,10 @@ if (![[Utility replaceNULL:[[kUserDefault valueForKey:kTutorial] valueForKey:kkr
         [self.navigationController pushViewController:obj animated:YES];
             return;
     }
- 
     [self get_DonationList_Service];
 }
+
+
 #pragma  mark - webviw delegate
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType{
     if (navigationType == UIWebViewNavigationTypeLinkClicked) {
@@ -323,7 +324,6 @@ if (![[Utility replaceNULL:[[kUserDefault valueForKey:kTutorial] valueForKey:kkr
            [dict setObject:txt.text forKey:@"quantity"];
        }
        [_temp_Arr_For_Selection replaceObjectAtIndex:index.row withObject:dict];
-       
        
        [_tbl_Testing reloadData];
    }
@@ -594,6 +594,9 @@ if (![[Utility replaceNULL:[[kUserDefault valueForKey:kTutorial] valueForKey:kkr
 
 - (IBAction)btn_Back_Clicked:(UIButton *)sender {
 
+     self.navigationController.navigationBarHidden = false;
+    [self.view endEditing:true];
+
     if ([self.incomingViewType isEqualToString:kfromKramPoint]) {
         [self.navigationController popViewControllerAnimated:YES];
     }
@@ -602,7 +605,6 @@ if (![[Utility replaceNULL:[[kUserDefault valueForKey:kTutorial] valueForKey:kkr
         [revealViewController revealToggleAnimated:YES];
         revealViewController.delegate  = self;
     }
-
 }
 
 - (IBAction)infoButton_clicked:(id)sender {
@@ -727,80 +729,6 @@ if (![[Utility replaceNULL:[[kUserDefault valueForKey:kTutorial] valueForKey:kkr
     }
     
 }
-
-/*
--(void)posting_DonationList_Service{
-    NSString *strRequestURL = @"SZDonationOrders.svc/AddDonationOrderDetails";
-    
-    NSMutableDictionary *params = [[NSMutableDictionary alloc] initWithObjectsAndKeys:@"",@"",nil];
-    
-    NSMutableDictionary *headers = [[NSMutableDictionary alloc] initWithObjectsAndKeys:@"application/json",@"Content-Type", nil];
-    
-    [self.navigationController.navigationBar setUserInteractionEnabled:NO];
-    
-    [MBProgressHUD showHUDAddedTo:ObjDelegate.window animated:YES];
-    ConnectionManager *connectionManager = [ConnectionManager sharedInstance];
-    [connectionManager startRequestWithHttpMethod:kHttpMethodTypePost withHttpHeaders:headers withServiceName:strRequestURL withParameters:params withSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
-        
-        NSLog(@"responseObject %@",responseObject);
-        NSLog(@"%ld",(long)[operation.response statusCode]);
-        if ([responseObject isKindOfClass:[NSDictionary class]])
-        {
-            if ([operation.response statusCode]  == 203){
-                [CommonFunctions showAlert:[operation.responseObject objectForKey:@"response"]];
-                
-                return;
-            }
-            NSDictionary *responseDict = (NSDictionary*) responseObject;
-            
-            if ([responseDict objectForKey:@"response"] != [NSNull null])
-            {
-                if([operation.response statusCode]  == 200){
-                    if ([[responseObject valueForKey:@"Status"] intValue]== 1) {
-                        NSMutableArray * json_Arr = [[NSMutableArray alloc] init];
-                        json_Arr = [[responseDict objectForKey:@"Payload"] objectForKey:@"DonationProductsList"];
-                        NSPredicate *PRD3  = [NSPredicate predicateWithFormat:@"RefDonCategoryID == 3"];
-                        NSArray *prd3_arr = [json_Arr filteredArrayUsingPredicate:PRD3];
-                        NSLog(@"arrary : %@", prd3_arr);
-                        NSPredicate *PRD2  = [NSPredicate predicateWithFormat:@"RefDonCategoryID == 2"];
-                        NSArray *prd2_arr = [json_Arr filteredArrayUsingPredicate:PRD2];
-                        NSPredicate *PRD1  = [NSPredicate predicateWithFormat:@"RefDonCategoryID == 1"];
-                        NSArray *prd1_arr = [json_Arr filteredArrayUsingPredicate:PRD1];
-                        
-                        [donation_Arr removeAllObjects];
-                        [donation_Arr addObjectsFromArray:prd3_arr];
-                        [donation_Arr addObjectsFromArray:prd2_arr];
-                        [donation_Arr addObjectsFromArray:prd1_arr];
-                        
-                        [_tbl_Testing reloadData];
-                    }else{
-                        [CommonFunctions showAlert:[responseObject valueForKey:@"message"]];
-                        
-                    }
-                    
-                }
-            }
-        }
-        [MBProgressHUD hideHUDForView:ObjDelegate.window animated:YES];
-        [self.navigationController.navigationBar setUserInteractionEnabled:YES];
-    }
-                                      withFailure:^(AFHTTPRequestOperation *operation, NSError *error) {
-                                          NSLog(@"Error:%@",error.localizedDescription);
-                                          NSLog(@"Error Code:%ld",(long)[operation.response statusCode]);
-                                          
-                                          if (![operation.responseObject objectForKey:@"response"]) {
-                                              [CommonFunctions showAlert:@"Please try again"];
-                                          }else{
-                                              [CommonFunctions showAlert:[operation.responseObject objectForKey:@"response"]];
-                                          }
-                                          [MBProgressHUD hideHUDForView:ObjDelegate.window animated:YES];
-                                          [self.navigationController.navigationBar setUserInteractionEnabled:YES];
-                                          
-                                      }
-     ];
-}
- */
-
 -(void)popViewTap:(UITapGestureRecognizer*)guesture{
     [self.popUp_View setHidden:YES];
 

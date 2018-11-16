@@ -6,12 +6,14 @@ target 'Brown&Green' do
   # use_frameworks!
   
   pod 'WBWebViewConsole', :git => 'https://github.com/Naituw/WBWebViewConsole.git'
-pod 'SDWebImage', '~>3.8'
+pod 'SDWebImage'
 pod 'Google/Analytics'
 pod 'Google/SignIn'
 pod 'Fabric'
 pod 'Stripe'
 pod 'Firebase/Core'
+pod 'IQKeyboardManager' #iOS8 and later
+
   # Pods for Brown&Green
 
 end

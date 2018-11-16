@@ -27,6 +27,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    self.navigationController.navigationBarHidden = false;
     UINib *nib = [UINib nibWithNibName:@"VC5Cell" bundle:nil];
     [_collection registerNib:nib forCellWithReuseIdentifier:@"VC5Cell"];
     donarList_Arr = [[NSMutableArray alloc] init];

@@ -1,6 +1,0 @@
-framework module Pods_Brown_Green {
-  umbrella header "Pods-Brown&Green-umbrella.h"
-
-  export *
-  module * { export * }
-}
