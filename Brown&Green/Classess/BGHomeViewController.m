@@ -61,10 +61,6 @@ if (![[Utility replaceNULL:[[kUserDefault valueForKey:kTutorial] valueForKey:kho
     
     _homeTableView.tableHeaderView = activityIndicator;
     
-   
-  
-    
-    
     // [self getDataFromLocalJsonFile];
    // [self databaseSync];
     
@@ -312,9 +308,15 @@ if (![[Utility replaceNULL:[[kUserDefault valueForKey:kTutorial] valueForKey:kho
 
 
 -(void)tableView:(UITableView *)tableView didEndDisplayingCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath{
-    if (selectedSectionDictionary) {
-        [selectedSectionDictionary removeAllObjects];
+    
+    if (selectedINdex == indexPath.row) {
+        selectedINdex =  indexPath.row;
+        if (selectedSectionDictionary) {
+            [selectedSectionDictionary removeAllObjects];
+        }
     }
+   
+    
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -840,16 +842,33 @@ if (![[Utility replaceNULL:[[kUserDefault valueForKey:kTutorial] valueForKey:kho
     
     if (isRowSelected == NO) {
         isRowSelected = YES;
+        selectedINdex = sender.tag+1;
+
+        [self addRemoveSubcateforyOnSelection:sender];
+
+    }
+    else{
+        isRowSelected = NO;
+        [selectedSectionDictionary removeAllObjects];
         
-        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"%K==%@",@"ParentCategoryID",[[iofDB.mArrCategories objectAtIndex:sender.tag] valueForKey:@"CategoryID"]];
-        filterSubCategoryArray = [[iofDB.mArrSubCategories filteredArrayUsingPredicate:predicate] mutableCopy];
-        
-        
-        
-        // if not having product in categories, check sub categories
-        if (filterSubCategoryArray.count==0)
-        {
-            title =   [[iofDB.mArrCategories objectAtIndex:sender.tag]valueForKey:@"CategoryName"];
+        if (selectedINdex != sender.tag+1) {
+            selectedINdex = sender.tag+1;
+            [self addRemoveSubcateforyOnSelection:sender];
+
+        }
+    }
+
+    [_homeTableView reloadData];
+}
+
+-(void)addRemoveSubcateforyOnSelection:(UIButton*)sender{
+    // if not having product in categories, check sub categories
+    
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"%K==%@",@"ParentCategoryID",[[iofDB.mArrCategories objectAtIndex:sender.tag] valueForKey:@"CategoryID"]];
+    filterSubCategoryArray = [[iofDB.mArrSubCategories filteredArrayUsingPredicate:predicate] mutableCopy];
+    if (filterSubCategoryArray.count==0)
+    {
+        title =   [[iofDB.mArrCategories objectAtIndex:sender.tag]valueForKey:@"CategoryName"];
         
         [FIRAnalytics logEventWithName:kFIREventSelectContent
                             parameters:@{
@@ -857,69 +876,62 @@ if (![[Utility replaceNULL:[[kUserDefault valueForKey:kTutorial] valueForKey:kho
                                          kFIRParameterItemName:[NSString stringWithFormat:@"%@", title],
                                          kFIRParameterContentType:[NSString stringWithFormat:@"CategoryName-%@", title]
                                          }];
-            
-            if([[[iofDB.mArrCategories objectAtIndex:sender.tag]valueForKey:@"CategoryID"] integerValue]==7)
+        
+        if([[[iofDB.mArrCategories objectAtIndex:sender.tag]valueForKey:@"CategoryID"] integerValue]==7)
+        {
+            if([[[NSUserDefaults standardUserDefaults] valueForKey:KAge] integerValue]>=18)
             {
-                if([[[NSUserDefaults standardUserDefaults] valueForKey:KAge] integerValue]>=18)
-                {
-                    
-                    [self performSegueWithIdentifier:kproductDetailSegueIdentifier sender:[iofDB.mArrCategories objectAtIndex:sender.tag]];
-                }
-                else
-                {
-                    [self performSegueWithIdentifier:kVerify sender:[iofDB.mArrCategories objectAtIndex:sender.tag]];
-                }
+                
+                [self performSegueWithIdentifier:kproductDetailSegueIdentifier sender:[iofDB.mArrCategories objectAtIndex:sender.tag]];
             }
             else
             {
-                [self performSegueWithIdentifier:kproductDetailSegueIdentifier sender:[iofDB.mArrCategories objectAtIndex:sender.tag]];
+                [self performSegueWithIdentifier:kVerify sender:[iofDB.mArrCategories objectAtIndex:sender.tag]];
             }
-            
         }
-        else{
-            
-            title =   [[iofDB.mArrCategories objectAtIndex:sender.tag]valueForKey:@"CategoryName"];
-            [FIRAnalytics logEventWithName:kFIREventSelectContent
-                                parameters:@{
-                                             //kFIRParameterItemID:[NSString stringWithFormat:@"Categoryid-%@", [[iofDB.mArrCategories objectAtIndex:sender.tag]valueForKey:@"CategoryID"]],
-                                             kFIRParameterItemName:[NSString stringWithFormat:@"%@", title],
-                                             kFIRParameterContentType:[NSString stringWithFormat:@"CategoryName-%@", title]
-                                             }];
-            if([[[iofDB.mArrCategories objectAtIndex:sender.tag]valueForKey:@"CategoryID"] integerValue]==9)
+        else
+        {
+            [self performSegueWithIdentifier:kproductDetailSegueIdentifier sender:[iofDB.mArrCategories objectAtIndex:sender.tag]];
+        }
+        
+    }
+    else{
+        
+        title =   [[iofDB.mArrCategories objectAtIndex:sender.tag]valueForKey:@"CategoryName"];
+        [FIRAnalytics logEventWithName:kFIREventSelectContent
+                            parameters:@{
+                                         //kFIRParameterItemID:[NSString stringWithFormat:@"Categoryid-%@", [[iofDB.mArrCategories objectAtIndex:sender.tag]valueForKey:@"CategoryID"]],
+                                         kFIRParameterItemName:[NSString stringWithFormat:@"%@", title],
+                                         kFIRParameterContentType:[NSString stringWithFormat:@"CategoryName-%@", title]
+                                         }];
+        if([[[iofDB.mArrCategories objectAtIndex:sender.tag]valueForKey:@"CategoryID"] integerValue]==9)
+        {
+            if([[[NSUserDefaults standardUserDefaults] valueForKey:KAge] integerValue]>=18)
             {
-                if([[[NSUserDefaults standardUserDefaults] valueForKey:KAge] integerValue]>=18)
-                {
-                    
-                    filterSubCategoryArray = [[iofDB.mArrSubCategories filteredArrayUsingPredicate:predicate] mutableCopy];
-                    NSSortDescriptor *sort = [NSSortDescriptor sortDescriptorWithKey:@"sort_order" ascending:YES];
-                    filterSubCategoryArray = (NSMutableArray *)[filterSubCategoryArray sortedArrayUsingDescriptors:@[sort]];
-                    
-                    selectedSectionDictionary = [NSMutableDictionary dictionaryWithDictionary:[iofDB.mArrCategories objectAtIndex:sender.tag]];
-                }
-                else
-                {
-                    [self performSegueWithIdentifier:kVerify sender:[iofDB.mArrCategories objectAtIndex:sender.tag]];
-                }
-     
-            }
-            
-            else{
-            
+                
                 filterSubCategoryArray = [[iofDB.mArrSubCategories filteredArrayUsingPredicate:predicate] mutableCopy];
                 NSSortDescriptor *sort = [NSSortDescriptor sortDescriptorWithKey:@"sort_order" ascending:YES];
                 filterSubCategoryArray = (NSMutableArray *)[filterSubCategoryArray sortedArrayUsingDescriptors:@[sort]];
                 
                 selectedSectionDictionary = [NSMutableDictionary dictionaryWithDictionary:[iofDB.mArrCategories objectAtIndex:sender.tag]];
             }
+            else
+            {
+                [self performSegueWithIdentifier:kVerify sender:[iofDB.mArrCategories objectAtIndex:sender.tag]];
+            }
+            
         }
         
+        else{
+            
+            filterSubCategoryArray = [[iofDB.mArrSubCategories filteredArrayUsingPredicate:predicate] mutableCopy];
+            NSSortDescriptor *sort = [NSSortDescriptor sortDescriptorWithKey:@"sort_order" ascending:YES];
+            filterSubCategoryArray = (NSMutableArray *)[filterSubCategoryArray sortedArrayUsingDescriptors:@[sort]];
+            
+            selectedSectionDictionary = [NSMutableDictionary dictionaryWithDictionary:[iofDB.mArrCategories objectAtIndex:sender.tag]];
+        }
     }
-    else{
-        isRowSelected = NO;
-        [selectedSectionDictionary removeAllObjects];
-    }
-    [_homeTableView reloadData];
-    
+
 }
 
 - (IBAction)segment_clicked:(id)sender {

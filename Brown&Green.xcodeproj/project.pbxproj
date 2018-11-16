@@ -2474,7 +2474,7 @@
 					"$(PROJECT_DIR)/Pods/FirebaseAnalytics/Frameworks",
 					"$(PROJECT_DIR)/Pods/GoogleSignIn/Frameworks",
 				);
-				GCC_PREFIX_HEADER = "/Volumes/data /Users/deepak/Documents/BrownAndGreen/Brown&Green/Application/Brown&Green.pch";
+				GCC_PREFIX_HEADER = "/Users/rampatid/Documents/BandG/Brown&Green/Application/Brown&Green.pch";
 				INFOPLIST_FILE = "Brown&Green/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -2510,7 +2510,7 @@
 					"$(PROJECT_DIR)/Pods/FirebaseAnalytics/Frameworks",
 					"$(PROJECT_DIR)/Pods/GoogleSignIn/Frameworks",
 				);
-				GCC_PREFIX_HEADER = "/Volumes/data /Users/deepak/Documents/BrownAndGreen/Brown&Green/Application/Brown&Green.pch";
+				GCC_PREFIX_HEADER = "/Users/rampatid/Documents/BandG/Brown&Green/Application/Brown&Green.pch";
 				INFOPLIST_FILE = "Brown&Green/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

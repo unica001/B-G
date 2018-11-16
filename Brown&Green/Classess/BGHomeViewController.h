@@ -50,6 +50,7 @@
     NSString *title;
     
     BOOL isRowSelected;
+    NSInteger selectedINdex;
 
     __weak IBOutlet UISegmentedControl *_segment;
     __weak IBOutlet UITableView *_offerTable;

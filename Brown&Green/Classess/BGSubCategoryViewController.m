@@ -24,8 +24,6 @@
     [super viewDidLoad];
     [self setInitialLayout];
     
-    
-    
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -166,6 +164,7 @@
     BGProductViewController *productViewController = [storyBoard instantiateViewControllerWithIdentifier:@"productViewController"];
     productViewController.title = [[self.subCategoryArray objectAtIndex:indexPath.row] valueForKey:@"CategoryName"];
     productViewController.dicCategory = [self.subCategoryArray objectAtIndex:indexPath.row];
+    productViewController.incommingViewType = kSubCatList;
     [FIRAnalytics logEventWithName:kFIREventSelectContent
                         parameters:@{
                                      // kFIRParameterItemID:[NSString stringWithFormat:@"SubSubCategoryid-%@", [[self.subCategoryArray objectAtIndex:indexPath.row]valueForKey:@"CategoryID"]],
